@@ -95,3 +95,58 @@ alter TABLE Pilotos add CONSTRAINT pk_pilotos_Planetas FOREIGN key (id_piloto)
 REFERENCES Planetas(idplaneta);
 
 
+
+---criando indices
+CREATE INDEX index_ativo_hash ON cliente2(cpf) USING HASH; -- mysql n roda tem q incluir ENGINE=MEMORY após a tabela
+
+--indice 2
+ALTER TABLE employee add index indice_cpf(cpf)
+
+
+
+-------Procedure
+
+delimiter\\
+CREATE procedure employer_de_Maior(
+  int idade,
+  )
+  BEGIN
+if(length(cpf)>11 and idade>17) THEN
+  when "é de maior"
+  --selet from user;
+ ELSE
+  when "Erro digitar CPF!";
+  else if;
+end;
+
+
+
+--------- CREATE VIEW com union(nao testado)
+
+create VIEW n_empregados_local as SELECT id_employee_departament
+from  employee
+UNION
+SELECT  id_departaments_locations 
+from departament
+
+--view 2
+
+create VIEW departamenos_gerentes as   select dname,mgr_ssn
+from  departament
+
+delimiter;
+
+
+
+----------TRIGGER
+
+delimiter//
+
+CREATE TRIGGER employee_update BEFORE insert
+ON employee
+FOR EACH ROW
+BEGIN
+set @sum= @sum +new.amount
+END
+
+delimiter;
