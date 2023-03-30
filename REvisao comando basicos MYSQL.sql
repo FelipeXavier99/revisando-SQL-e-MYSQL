@@ -1,14 +1,14 @@
 --REVISAO MYQL WORBENC
 
 
-    select *from teste_mysql
+select *from teste_mysql
 
 
 
 
 
 alter table teste rename to teste_mysql
-  alter table teste_mysql change nasciment nascimento  int
+alter table teste_mysql change nasciment nascimento  int
  
 
 
